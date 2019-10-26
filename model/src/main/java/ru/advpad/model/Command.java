@@ -1,4 +1,4 @@
-package ru.advpad.rest.model;
+package ru.advpad.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.advpad.rest.Storage;
-import ru.advpad.rest.model.Command;
+import ru.advpad.model.Command;
 
 import java.util.Collection;
 import java.util.List;
