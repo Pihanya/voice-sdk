@@ -14,9 +14,10 @@ import java.util.List;
 @With
 @AllArgsConstructor
 @NoArgsConstructor
-public class Command implements Serializable {
+public class Command {
 
     private String name;
     private Collection<String> aliases;
+    private Integer id;
 
 }

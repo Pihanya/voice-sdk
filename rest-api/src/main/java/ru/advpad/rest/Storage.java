@@ -56,7 +56,13 @@ public class Storage {
     }
 
     public Collection<Command> getCommandMapping() {
-        return commandMapping.values();
+        Collection<Command> commands = commandMapping.values();
+        int id = 0;
+        for (Command command : commands) {
+            command.setId(id);
+            id++;
+        }
+        return commands;
     }
 
     private void syncFileStorage() {
