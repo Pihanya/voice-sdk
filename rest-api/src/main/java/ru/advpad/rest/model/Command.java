@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 @With
 @AllArgsConstructor
 @NoArgsConstructor
-public class Command {
+public class Command implements Serializable {
 
     private String name;
     private Collection<String> aliases;

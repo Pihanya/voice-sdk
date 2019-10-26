@@ -17,17 +17,22 @@ public class RestEndpoint {
     @Autowired
     private Storage storage;
 
-    @PostMapping
+    @PostMapping("/mult")
     public void addCommands(@RequestBody List<Command> commands) {
         for (Command command : commands) storage.addCommand(command);
     }
 
-    @GetMapping(path = "/{alias}")
+    @PostMapping
+    public void addCommand(@RequestBody Command command) {
+        storage.addCommand(command);
+    }
+
+    @GetMapping
     public ResponseEntity<String> getCommand(@RequestParam("alias") String alias) {
         return ResponseEntity.of(storage.getCommandByAlias(alias));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<Collection<Command>> getAllCommands() {
         return ResponseEntity.of(Optional.of(storage.getCommandMapping()));
     }
