@@ -20,7 +20,7 @@ import java.util.*;
 public class Storage {
 
     private static Map<String, Command> commandMapping;
-    private final static String STORAGE_PATH = "C:\\Users\\kotelp\\Desktop\\storage.json";
+    private final static String STORAGE_PATH = "storage.json";
     private static ObjectMapper objectMapper = new ObjectMapper();
     private static ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
 
