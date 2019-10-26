@@ -8,6 +8,7 @@
         <module>rest-api</module>
         <module>model</module>
         <module>sdk</module>
+        <module>browser-control</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

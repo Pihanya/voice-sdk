@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.advpad.model.Command;
 
@@ -23,6 +24,9 @@ public class Storage {
     private final static String STORAGE_PATH = "storage.json";
     private static ObjectMapper objectMapper = new ObjectMapper();
     private static ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+
+    @Autowired
+    private PyScriptRunner scriptRunner;
 
     static {
         try {
@@ -52,7 +56,7 @@ public class Storage {
         for (Command command : commandMapping.values()) {
             if (command.getAliases().contains(alias)) return Optional.of(command.getName());
         }
-        return Optional.empty();
+        return Optional.ofNullable(scriptRunner.predictPossible(alias));
     }
 
     public Collection<Command> getCommandMapping() {

@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "ru.advpad.rest.grpc";
+
+message RecognizeRequest {
+    string alias = 1;
+}
+
+message RecognizeResponse {
+    string command = 1;
+}
+
+service RecognitionService {
+    rpc recognize(RecognizeRequest) returns (RecognizeResponse);
+}
