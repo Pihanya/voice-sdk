@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>SDK  </span>
+        <span>BEPIS SDK  </span>
         <span class="font-weight-light">ADMIN PANEL</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -23,7 +23,6 @@
 
 <script>
 import Admin from './components/Admin';
-
 export default {
   name: 'App',
   components: {
