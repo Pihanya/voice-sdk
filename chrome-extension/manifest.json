@@ -1,0 +1,14 @@
+{
+  "background": {
+  "scripts": ["injecter.js"]
+	},
+  "manifest_version": 2,
+  "name": "Bepis Voice Controller",
+  "version": "1.0",
+  "content_scripts": [
+	{
+        "matches": [ "http://market.yandex.ru/*", "https://market.yandex.ru/*" ],
+        "js": ["content.js"]
+    }],
+	"web_accessible_resources": ["anniyang.js", "commands.js"]
+ }
