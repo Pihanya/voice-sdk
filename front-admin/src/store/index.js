@@ -4,7 +4,7 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 export const HTTP = axios.create({
-    baseURL: 'http://pihanya.ru:8080/api/',
+    baseURL: 'http://192.168.43.214:8080/api/',
     headers: {'Content-Type': 'application/json'}
 });
 export default new Vuex.Store({

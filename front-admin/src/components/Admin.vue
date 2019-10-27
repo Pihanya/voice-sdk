@@ -180,8 +180,12 @@
                   name: this.formCommand,
                   aliases: this.formWords.split(',')
               }
-              this.$store.dispatch('postWord', JSON.stringify(postjson)).then(() => {})
+              this.$store.dispatch('postWord', JSON.stringify(postjson)).then(() => {
+                  this.formCommand = '';
+                  this.formWords = '';
+              })
           }
       }
   }
 </script>
+
